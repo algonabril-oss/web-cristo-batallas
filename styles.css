@@ -359,6 +359,7 @@ ul {
 /* Historia Section */
 .historia-section {
     background-color: #1a1a1a;
+    color: var(--color-white);
 }
 
 .historia-timeline {
