@@ -177,23 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const sabadoSantoCoords = [
             [39.4747, -6.36998], // Concatedral (Salida)
-            [39.4748, -6.3705],  // calle Arco de la Estrella
-            [39.4749, -6.37095], // Arco de la Estrella
-            [39.4747, -6.3707],  // Adarve de la Estrella
-            [39.4740, -6.3702],  // Adarve de Santa Ana
-            [39.4732, -6.3695],  // Adarve del Padre Rosalío
-            [39.4726, -6.3693],  // Adarve de la Puerta de Mérida
-            [39.4724, -6.3703],  // Puerta de Mérida
-            [39.4727, -6.3708],  // calle de Puerta de Mérida
-            [39.4733, -6.3715],  // calle Pizarro
-            [39.4735, -6.3725],  // calle Sergio Sánchez
+            [39.4748, -6.3704],  // calle del Arco de la Estrella completa
+            [39.4752, -6.3706],  // Adarve de la Estrella (Norte del Arco)
+            [39.4745, -6.3708],  // Adarve de Santa Ana (Inicio de subida real)
+            [39.4735, -6.3700],  // Adarve del Padre Rosalío (Subiendo)
+            [39.4727, -6.3693],  // Adarve de la Puerta de Mérida (Zona alta)
+            [39.4724, -6.3702],  // calle de Puerta de Mérida (Salida del recinto)
+            [39.4730, -6.3712],  // calle Pizarro (Bordeando muralla por fuera)
+            [39.4735, -6.3725],  // calle de Sergio Sánchez
             [39.4736, -6.3739],  // Plaza de San Juan
-            [39.4745, -6.3726],  // calle Pintores entera
-            [39.4751, -6.3716],  // Plaza Mayor (base de la cuesta)
-            [39.4750, -6.3712],  // cuesta del Arco de la Estrella
-            [39.4749, -6.3710],  // Arco de la Estrella
-            [39.4748, -6.3706],  // calle Arco de la Estrella
-            [39.4751, -6.3708]   // Palacio Episcopal (Llegada)
+            [39.4745, -6.3726],  // calle Pintores entera (Bajada a Plaza Mayor)
+            [39.4751, -6.3713],  // Plaza Mayor
+            [39.4750, -6.3712],  // cuesta del Arco de la Estrella (Subida al Arco)
+            [39.4749, -6.37095], // Arco de la Estrella (Entrada)
+            [39.4748, -6.3706],  // calle del arco de la estrella (Dentro)
+            [39.4751, -6.37078]  // Palacio Episcopal de la plaza de Santa María (Llegada)
         ];
 
         // Draw Polylines
