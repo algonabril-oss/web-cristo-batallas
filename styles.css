@@ -429,19 +429,8 @@ ul {
     }
 }
 
-/* Cofradia styles removed */
+/* Transition to next section */
 
-
-
-/* End of Cofradia obsolete styles */
-
-    
-    .cofradia-badges {
-
-/* Clean up complete */
-
-
-/* Titles Section */
 .titles-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
