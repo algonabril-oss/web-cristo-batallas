@@ -182,7 +182,7 @@ ul {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: url('img/hero_concatedral.png') no-repeat center center/cover;
+    background: url('img/hero_altar.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
