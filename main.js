@@ -176,17 +176,24 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
 
         const sabadoSantoCoords = [
-            [39.4747, -6.36998], // Concatedral
-            [39.4749, -6.3710],  // Arco
-            [39.4745, -6.3705],  // Adarve
-            [39.4740, -6.3700],  // Adarve
-            [39.4730, -6.3690],  // Adarve south
-            [39.4725, -6.3705],  // Puerta Mérida area
-            [39.4735, -6.3715],  // Pizarro
-            [39.4735, -6.3740],  // Plaza San Juan
-            [39.4745, -6.3725],  // Pintores
-            [39.4749, -6.3710],  // Arco
-            [39.4751, -6.3708]   // Palacio Episcopal
+            [39.4747, -6.36998], // Concatedral (Salida)
+            [39.4748, -6.3705],  // calle Arco de la Estrella
+            [39.4749, -6.37095], // Arco de la Estrella
+            [39.4747, -6.3707],  // Adarve de la Estrella
+            [39.4740, -6.3702],  // Adarve de Santa Ana
+            [39.4732, -6.3695],  // Adarve del Padre Rosalío
+            [39.4726, -6.3693],  // Adarve de la Puerta de Mérida
+            [39.4724, -6.3703],  // Puerta de Mérida
+            [39.4727, -6.3708],  // calle de Puerta de Mérida
+            [39.4733, -6.3715],  // calle Pizarro
+            [39.4735, -6.3725],  // calle Sergio Sánchez
+            [39.4736, -6.3739],  // Plaza de San Juan
+            [39.4745, -6.3726],  // calle Pintores entera
+            [39.4751, -6.3716],  // Plaza Mayor (base de la cuesta)
+            [39.4750, -6.3712],  // cuesta del Arco de la Estrella
+            [39.4749, -6.3710],  // Arco de la Estrella
+            [39.4748, -6.3706],  // calle Arco de la Estrella
+            [39.4751, -6.3708]   // Palacio Episcopal (Llegada)
         ];
 
         // Draw Polylines
