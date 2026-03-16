@@ -146,15 +146,102 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Map Initialization
+    const initMap = () => {
+        const mapContainer = document.getElementById('map');
+        if (!mapContainer) return;
+
+        // Initialize map centered in Cáceres
+        const map = L.map('map').setView([39.4747, -6.3710], 16);
+
+        // Add Dark Matter tiles
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 20
+        }).addTo(map);
+
+        // Itinerary Coordinates (Approximate based on streets)
+        const lunesSantoCoords = [
+            [39.4747, -6.36998], // Concatedral
+            [39.4751, -6.3708],  // Plaza Santa Maria
+            [39.4749, -6.3710],  // Arco de la Estrella
+            [39.4752, -6.3714],  // Plaza Mayor
+            [39.4745, -6.3725],  // Pintores
+            [39.4735, -6.3740],  // Plaza San Juan
+            [39.4745, -6.3750],  // Gran Vía (returning)
+            [39.4750, -6.3735],  // Back towards Arco
+            [39.4749, -6.3710],  // Arco
+            [39.4747, -6.36998]  // Concatedral
+        ];
+
+        const sabadoSantoCoords = [
+            [39.4747, -6.36998], // Concatedral
+            [39.4749, -6.3710],  // Arco
+            [39.4745, -6.3705],  // Adarve
+            [39.4740, -6.3700],  // Adarve
+            [39.4730, -6.3690],  // Adarve south
+            [39.4725, -6.3705],  // Puerta Mérida area
+            [39.4735, -6.3715],  // Pizarro
+            [39.4735, -6.3740],  // Plaza San Juan
+            [39.4745, -6.3725],  // Pintores
+            [39.4749, -6.3710],  // Arco
+            [39.4751, -6.3708]   // Palacio Episcopal
+        ];
+
+        // Draw Polylines
+        const lunesPoly = L.polyline(lunesSantoCoords, {
+            color: '#910a17',
+            weight: 5,
+            opacity: 0.8,
+            lineJoin: 'round'
+        }).addTo(map);
+
+        const sabadoPoly = L.polyline(sabadoSantoCoords, {
+            color: '#c5a059',
+            weight: 5,
+            opacity: 0.8,
+            lineJoin: 'round'
+        }).addTo(map);
+
+        // Add Markers for Departure/Arrival
+        const mainIcon = L.icon({
+            iconUrl: 'img/escudo_heraldico_white.png',
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -15]
+        });
+
+        L.marker([39.4747, -6.36998], {icon: mainIcon})
+            .addTo(map)
+            .bindPopup('<b>Concatedral de Santa María</b><br>Punto de Salida');
+
+        // Legend Control
+        const legend = L.control({position: 'bottomright'});
+        legend.onAdd = function (map) {
+            const div = L.DomUtil.create('div', 'info legend');
+            div.style.backgroundColor = 'rgba(0,0,0,0.8)';
+            div.style.color = 'white';
+            div.style.padding = '10px';
+            div.style.borderRadius = '5px';
+            div.style.border = '1px solid #c5a059';
+            div.innerHTML = `
+                <h4 style="margin: 0 0 5px; color: #c5a059; font-size: 0.8rem; text-transform: uppercase;">Itinerarios 2026</h4>
+                <div style="display: flex; align-items: center; margin-bottom: 5px;">
+                    <span style="width: 20px; height: 3px; background: #910a17; display: inline-block; margin-right: 10px;"></span>
+                    <span style="font-size: 0.75rem;">Lunes Santo</span>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <span style="width: 20px; height: 3px; background: #c5a059; display: inline-block; margin-right: 10px;"></span>
+                    <span style="font-size: 0.75rem;">Sábado Santo</span>
+                </div>
+            `;
+            return div;
+        };
+        legend.addTo(map);
+    };
+
+    initMap();
+    
     // Navbar background change on scroll
-    const header = document.querySelector('.header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-        } else {
-            header.style.backgroundColor = 'rgba(18, 18, 18, 1)';
-            header.style.backdropFilter = 'none';
-        }
-    });
 });
