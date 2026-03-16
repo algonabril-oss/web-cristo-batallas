@@ -116,6 +116,17 @@ document.addEventListener('DOMContentLoaded', () => {
             spans[1].style.opacity = mobileMenu.classList.contains('active') ? '0' : '1';
             spans[2].style.transform = mobileMenu.classList.contains('active') ? 'rotate(-45deg) translate(5px, -6px)' : 'none';
         });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                const spans = mobileToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
     }
 
     // Scroll Animations
